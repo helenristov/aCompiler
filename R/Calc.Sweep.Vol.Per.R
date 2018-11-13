@@ -17,6 +17,7 @@ Calc.Sweep.Vol.Per <- function(contract, start, end, book.per, Limit, VML) {
   
   data <- try(Pull.TRS.Data(contract, start, end, incr = 0)[[1]], silent = TRUE)
   if(is(data,'try-error')){ return(1.0) }
+  if(any(is.na(apply(data[,c('BestBid','BidQty','AskQty','BestAsk')], 1, sum)))){ data <- data[-which(is.na(apply(data[,c('BestBid','BidQty','AskQty','BestAsk')], 1, sum))),] }
   bs.p <- as.numeric(quantile(c(data$BidQty, data$AskQty), prob = book.per))
   
   data$SweepVolume <-
@@ -38,6 +39,10 @@ Calc.Sweep.Vol.Per <- function(contract, start, end, book.per, Limit, VML) {
                          data$TradedVolume),
                   ## No Trade Occurred
                   0))
+  
+  if(sum(data$TradedVolume, na.rm = TRUE) == 0){
+    return(3)
+  }
   
   sweep.per <- 100*sum(data$SweepVolume, na.rm = TRUE) / sum(data$TradedVolume, na.rm = TRUE)
   inf.fact  <- as.numeric(sqrt(1 + max(0, (sweep.per - 10) / 3 * 0.10 )))

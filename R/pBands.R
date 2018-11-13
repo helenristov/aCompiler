@@ -9,7 +9,7 @@
 #'
 #'@export
 
-pBands  <- function(spread, dFast, dSlow, minFact, maxFact, incr = 0, minVol = 0, FUN = NULL){
+pBands  <- function(spread, dFast, dSlow, minFact, maxFact, incr = 0, minVol = 0, FUN = NULL, p.output = FALSE){
   
   ##period is specified in seconds so determine
   if(incr == 0){ incr <- abs(as.numeric(difftime(index(spread[1]), index(spread[2]), units = "secs"))) }
@@ -45,6 +45,12 @@ pBands  <- function(spread, dFast, dSlow, minFact, maxFact, incr = 0, minVol = 0
   spread$PB.LB.A  <- spread$Slow + minFact*spread$sdev
   spread$PB.UB.B  <- spread$Slow - maxFact*spread$sdev
   spread$PB.LB.B  <- spread$Slow - minFact*spread$sdev
+  
+  if(p.output){
+    spread$MeanDiff <- MA.Diff$Mean  
+    output = list(spread = spread, lambdas = list(Slow = 2/(nSlow + 1), Fast = 2/(nFast + 1)))
+    return(output)
+  }
   
   return(spread)
 }

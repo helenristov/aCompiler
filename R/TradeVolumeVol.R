@@ -45,7 +45,7 @@ TradeVolumeVol <- function (OR_Contracts, StartTime, EndTime, Types, MinTrdVolum
       #   ContractData   <- Pull.TRS.Data(Contracts, StartTime, EndTime, incr = 0, ID = ID)
       # }
       
-      Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1")], na.rm = TRUE)/NumOfDays}))
+      Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1sec")], na.rm = TRUE)/NumOfDays}))
       
       VolAdj[[Type]] <- as.matrix(sapply(Avg.Daily.Vols, function(x) {min(x, MinTrdVolume[StringNum])/MinTrdVolume[StringNum]}))
       rownames(VolAdj[[Type]]) <- Contracts
@@ -64,7 +64,7 @@ TradeVolumeVol <- function (OR_Contracts, StartTime, EndTime, Types, MinTrdVolum
       #   ContractData   <- Pull.TRS.Data(Contracts, StartTime, EndTime, incr = 0, ID = ID)
       # }
       
-      Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1")], na.rm = TRUE)/NumOfDays}))
+      Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1sec")], na.rm = TRUE)/NumOfDays}))
       
       VolAdj[[Type]] <- as.matrix(sapply(Avg.Daily.Vols, function(x) {min(x, MinTrdVolume[StringNum])/MinTrdVolume[StringNum]}))
       rownames(VolAdj[[Type]]) <- Contracts
@@ -87,7 +87,7 @@ TradeVolumeVol <- function (OR_Contracts, StartTime, EndTime, Types, MinTrdVolum
         #   ContractData   <- Pull.TRS.Data(Contracts, StartTime, EndTime, incr = 0, ID = ID)
         # }
         
-        Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1")], na.rm = TRUE)/NumOfDays}))
+        Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1sec")], na.rm = TRUE)/NumOfDays}))
         
         VolAdj[[Type]] <- as.matrix(sapply(Avg.Daily.Vols, function(x) {min(x, MinTrdVolume[StringNum])/MinTrdVolume[StringNum]}))
         
@@ -116,7 +116,7 @@ TradeVolumeVol <- function (OR_Contracts, StartTime, EndTime, Types, MinTrdVolum
         #   ContractData   <- Pull.TRS.Data(Contracts, StartTime, EndTime, incr = 0, ID = ID)
         # }
         
-        Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1")], na.rm = TRUE)/NumOfDays}))
+        Avg.Daily.Vols <- unlist(lapply(Contracts, function(x) {sum(ContractData[[x]][,paste0(x,".Volume.1sec")], na.rm = TRUE)/NumOfDays}))
         
         VolAdj[[Type]] <- as.matrix(sapply(Avg.Daily.Vols, function(x) {min(x, MinTrdVolume[StringNum])/MinTrdVolume[StringNum]}))
         

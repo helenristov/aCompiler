@@ -280,8 +280,32 @@ CalcVar <- function (OR_Cov, Types, date = last(GetWeekDays(Sys.Date() - 8, Sys.
       
       Var[['ICS']] <- matrix(Vars, nrow = length(Vars), ncol = 1, dimnames = list(sp.names, 'ICS_Vars'))
       
+    }else if(Type %in% c('OG')){
+      Vars <- numeric()
+      OG_Options <- character()
+      for(i in 1:(ncol(OR_Cov)-1)){ for(j in (i+1):ncol(OR_Cov)){ if(getContractAsset(colnames(OR_Cov)[i]) == getContractAsset(colnames(OR_Cov)[j])){ OG_Options <- append(OG_Options, paste0(colnames(OR_Cov)[i], ".", colnames(OR_Cov)[j])) } } }
+        
+      sp.names <- character()
+      for(og in OG_Options){
+        Legs <- unlist(strsplit(og, split = ".", fixed = TRUE))
+        sp.names <- append(sp.names, paste0(ifelse(getContractAsset(Legs[1]) %in% c('TU','FV','TY','US','AUL','ES'), getContractAsset(Legs[1]), Legs[1]), ".", ifelse(getContractAsset(Legs[2]) %in% c('TU','FV','TY','US','AUL','ES'), getContractAsset(Legs[2]), Legs[2])))
+        
+        test <- try(load(paste0('/data/synthetics/', last(sp.names), '/', last(sp.names), '_Daily_Betas.RData')), silent = TRUE)
+        if(class(test)=="try-error"){
+          sp.names <- sp.names[-length(sp.names)]
+          next
+        }
+        
+        beta <- get(paste0(last(sp.names), ".Betas"))
+        beta <- round(c(1, -as.numeric(beta[which(as.Date(index(beta)) == as.Date(date)),'TLS'])), 4)
+        
+        Vars <- append(Vars, t(as.matrix(beta)) %*% OR_Cov[Legs, Legs] %*% as.matrix(beta))
+      }
+      
+      Var[['OG']] <- matrix(Vars, nrow = length(Vars), ncol = 1, dimnames = list(sp.names, 'OG_Vars'))
+      
     }else{
-      stop(paste0(Type, " Doesn't Exist Yet!"))
+      stop(paste0(Type, " Doesn't Exist Yet in CalcVar!"))
     }
   }
   

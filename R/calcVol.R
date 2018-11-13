@@ -11,7 +11,7 @@
 #'@export
 
 
-calcVol <- function(spread, vol.settings, type = 'Diff', .combine = TRUE, incr = 0){
+calcVol <- function(spread, vol.settings, type = 'Diff', .combine = TRUE, incr = 0, minVol = NULL){
   
   ##period is specified in seconds so determine
   if(incr == 0){ incr <- abs(as.numeric(difftime(index(spread[1]), index(spread[2]), units = "secs"))) }
@@ -22,16 +22,11 @@ calcVol <- function(spread, vol.settings, type = 'Diff', .combine = TRUE, incr =
   n.slow <- IncrPerWindow(start.date, end.date, incr, window.size = vol.settings$dSlow.size, window.size.units = vol.settings$dSlow.units)
   n.fast <- IncrPerWindow(start.date, end.date, incr, window.size = vol.settings$dFast.size, window.size.units = vol.settings$dFast.units)
   if(toupper(type) == 'DIFF' & .combine == TRUE){
-    
     Vol        <-  sd(diff(spread), na.rm = TRUE) * sqrt(3600 / incr)    ##hourly vol across entire spread
-    
   }else if(toupper(type) == 'DIFF'){
-    
     spread$diff.vol <- runSD(diff(spread), n = n.slow, cumulative = FALSE) * sqrt(3600 / incr) 
     Vol             <- spread
-    
   }else if(toupper(type) == 'PBANDS'){
-    
     spreadName        <- colnames(spread)
     spread$SMA.Fast   <- SMA(spread[,1], n = n.fast)
     spread$SMA.Slow   <- SMA(spread[,1], n = n.slow)
@@ -46,6 +41,8 @@ calcVol <- function(spread, vol.settings, type = 'Diff', .combine = TRUE, incr =
       Vol             <- mean(spread$Vol, na.rm = TRUE)  
     }
   }
+  
+  if(!is.null(minVol)){ if(.combine){ Vol <- max(Vol, minVol) }else{ Vol <- pmax(Vol, minVol) } }
   
   return(Vol)
   

@@ -26,4 +26,3 @@ Calculates a low amplitude sinusoidal regression based on a spectral analysis
 \author{
 Helena Ristov and Nicholas Dregne
 }
-

@@ -20,4 +20,3 @@ Calculates Covariates for EQPos and Risk Redux Calcs
 \author{
 Nicholas Dregne
 }
-

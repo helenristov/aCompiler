@@ -37,4 +37,3 @@ calPSI(test, 'x1', 'x1_val')
 \author{
 Helena Ristov
 }
-

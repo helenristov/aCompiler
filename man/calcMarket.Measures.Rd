@@ -19,4 +19,3 @@ Calculates Standard Market Micro-Structures (WMP, MP, Bid-Ask)
 \author{
 Nicholas Dregne
 }
-

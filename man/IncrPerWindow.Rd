@@ -23,4 +23,3 @@ Calculates the number of increments for a specified window of time
 \author{
 Helena Ristov
 }
-

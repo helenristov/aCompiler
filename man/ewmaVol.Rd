@@ -20,4 +20,3 @@ Calculates the Exponential Weighted Moving Average volatilty
 \author{
 Helena Ristov
 }
-

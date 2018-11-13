@@ -31,4 +31,3 @@ Calculates Perceived Market Edge
 \author{
 Nicholas Dregne
 }
-

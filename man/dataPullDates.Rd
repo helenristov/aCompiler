@@ -19,4 +19,3 @@ Creates start and end datetimes for pullling data
 \author{
 Cameron Sawyer
 }
-

@@ -21,4 +21,3 @@ of the contracts' calendar spreads which tend to be more liquid and less volatil
 \author{
 Nicholas Dregne and Helena Ristov
 }
-

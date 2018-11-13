@@ -19,4 +19,3 @@ Calculates Effective Bid Ask Prices
 \author{
 Nicholas Dregne
 }
-

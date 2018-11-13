@@ -19,4 +19,3 @@ Calculates the optimal number of clusters using a cluster R^2 equivalent metric,
 \author{
 Helena Ristov
 }
-

@@ -29,4 +29,3 @@ Calculates A Volume Imbalance Trigger from Buy and Sell Raw Data
 \author{
 Helena Ristov
 }
-

@@ -5,7 +5,7 @@
 \title{Calculates the Aroon oscillator and outputs a signal for buy and sell events}
 \usage{
 Aroon(spread.data, vol.settings, volBand, aroon.settings,
-  use.volFilter = TRUE)
+  use.volFilter = TRUE, ...)
 }
 \arguments{
 \item{spread.data}{A price series}
@@ -31,4 +31,3 @@ Calculates the Aroon oscillator and outputs a signal for buy and sell events
 \author{
 Helena Ristov and Cameron Sawyer
 }
-

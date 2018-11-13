@@ -19,4 +19,3 @@ Calculates a drift measure for a price series
 \author{
 Helena Ristov
 }
-

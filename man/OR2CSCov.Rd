@@ -19,4 +19,3 @@ covariance matrix
 \author{
 Nicholas Dregne and Helena Ristov
 }
-

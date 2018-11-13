@@ -23,4 +23,3 @@ Calculates the range of a spread computed by percentile bands to minimize the im
 \author{
 Helena Ristov
 }
-

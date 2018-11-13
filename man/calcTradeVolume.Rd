@@ -19,4 +19,3 @@ Creates a time-series of the traded volumes for a given time period.
 \author{
 Helen Ristov
 }
-

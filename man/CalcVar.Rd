@@ -23,4 +23,3 @@ CalcVar can calculate variances from an outright covariance matrix for outrights
 \author{
 Nicholas Dregne and Helena Ristov
 }
-

@@ -28,4 +28,3 @@ Creates start and end datetimes for pullling data
 \author{
 Helen Ristov
 }
-

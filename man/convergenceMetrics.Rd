@@ -28,4 +28,3 @@ Convergence test based on a disjoint distance from the limit value
 \author{
 Helena Ristov
 }
-

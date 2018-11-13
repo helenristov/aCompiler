@@ -4,14 +4,14 @@
 \alias{Calc.Volumes}
 \title{Creates a time-series of the traded volumes for a given time period.}
 \usage{
-Calc.Volumes(data, contract, lookBackPeriod)
+Calc.Volumes(data, contract, lookBackPeriod = 1)
 }
 \arguments{
 \item{data}{MDR or TRS data.}
 
 \item{contract}{The contract that you are pulling data for.}
 
-\item{lookBackPeriod}{The lookback period of rolling volume calculation in seconds.}
+\item{lookBackPeriod}{A list containing the lookback units and size for a rolling volume calculation specified in secs,hours,day,weeks,months}
 }
 \description{
 Creates a time-series of the traded volumes for a given time period.
@@ -19,4 +19,3 @@ Creates a time-series of the traded volumes for a given time period.
 \author{
 Helen Ristov and Cameron Sawyer
 }
-

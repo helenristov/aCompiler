@@ -20,4 +20,3 @@ Fits a sinusoidal curve to a time-series object
 \author{
 Helena Ristov and Nicholas Dregne
 }
-

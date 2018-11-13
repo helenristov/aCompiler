@@ -4,7 +4,8 @@
 \alias{pBands}
 \title{Calculates the pband levels on a spread price series}
 \usage{
-pBands(spread, dFast, dSlow, minFact, maxFact)
+pBands(spread, dFast, dSlow, minFact, maxFact, incr = 0, minVol = 0,
+  FUN = NULL, p.output = FALSE)
 }
 \arguments{
 \item{spread}{A price series on which you want to compute the probability bands.}
@@ -23,4 +24,3 @@ Calculates the pband levels on a spread price series
 \author{
 Helena Ristov
 }
-

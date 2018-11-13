@@ -21,4 +21,3 @@ Generates a portfolio for a given list of assets
 \author{
 Helena Ristov
 }
-

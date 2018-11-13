@@ -23,4 +23,3 @@ Calculates Portfolio Risk Reduction for Pre-Selected Contract Types
 \author{
 Nicholas Dregne and Helena Ristov
 }
-

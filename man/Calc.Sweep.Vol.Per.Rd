@@ -21,4 +21,3 @@ Calculate the Inflation Factor From Market Sweeps.
 \author{
 Helen Ristov and Nic Dregne
 }
-

@@ -27,4 +27,3 @@ Compares recent daily traded volume to a minimally-accepted daily volume and adj
 \author{
 Nicholas Dregne
 }
-

@@ -19,4 +19,3 @@ Calculates the SemiVariance of Price Series
 \author{
 Nicholas Dregne
 }
-

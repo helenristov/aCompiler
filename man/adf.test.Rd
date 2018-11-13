@@ -22,4 +22,3 @@ Calculates ADF Test Info based from the urca package
 \author{
 Nicholas Dregne and Helena Ristov
 }
-

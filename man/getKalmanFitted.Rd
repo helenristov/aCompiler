@@ -30,4 +30,3 @@ Computes the Kalman Filter model values using the DLM Polynomial Fit
 \author{
 Helena Ristov
 }
-

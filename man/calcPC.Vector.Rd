@@ -23,4 +23,3 @@ will calculate the principal components' variation throughout the price series.
 \author{
 Nicholas Dregne
 }
-

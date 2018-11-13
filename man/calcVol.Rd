@@ -4,21 +4,21 @@
 \alias{calcVol}
 \title{Calculates the volatility of a spread}
 \usage{
-calcVol(spread, dPeriod = NA, dFast = NA, dSlow = NA, type = "Diff",
-  .combine = TRUE)
+calcVol(spread, vol.settings, type = "Diff", .combine = TRUE, incr = 0,
+  minVol = NULL)
 }
 \arguments{
 \item{spread}{A price series on which you want to compute the hourly volatility measure over a specified period of time}
+
+\item{type}{The type of volatility to compute. Valid selections are Diff and PBands}
+
+\item{.combine}{A boolean that sets if we want to merge the periods and return the mean of the rolling vol measures over those periods.}
 
 \item{dPeriod}{The number of days used to compute the hourly volatility. Default is set to NA and should be used when selecting PBands type}
 
 \item{dFast}{The number of days for the pbands fast moving average}
 
 \item{dSlow}{The number of days for the pbands slow moving average}
-
-\item{type}{The type of volatility to compute. Valid selections are Diff and PBands}
-
-\item{.combine}{A boolean that sets if we want to merge the periods and return the mean of the rolling vol measures over those periods.}
 }
 \description{
 Calculates the volatility of a spread
@@ -26,4 +26,3 @@ Calculates the volatility of a spread
 \author{
 Helena Ristov
 }
-

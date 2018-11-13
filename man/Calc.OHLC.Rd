@@ -19,4 +19,3 @@ Creates an Open, High, Low, Close time-series for a given contract.
 \author{
 Helen Ristov and Cameron Sawyer
 }
-

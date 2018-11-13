@@ -19,4 +19,3 @@ Creates a VWAP series for a given contract
 \author{
 Helen Ristov and Cameron Sawyer
 }
-
